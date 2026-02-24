@@ -32,3 +32,230 @@
   display: none;
   color: #007bff;
 }
+
+/* ─── Button Group ───────────────────────────────── */
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+/* ─── Project Cards ──────────────────────────────── */
+.project-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+  width: 260px;
+  min-width: 260px;
+  aspect-ratio: 4.3 / 3.3;
+  object-fit: fill;
+  object-position: center;
+  background-color: #f4f4f4;
+  border-right: 1px solid #e0e0e0;
+  padding: 8px;
+}
+
+.project-info {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.project-overview {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ─── Tags ───────────────────────────────────────── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.tag {
+  background-color: #efefef;
+  color: #444;
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* ─── Banner ─────────────────────────────────────── */
+.banner:not([style]) {
+  background-color: #2e2b38;
+}
+
+/* ─── Hero Name: fade in only, no movement ───────── */
+.hero-name {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  animation: fadeOnly 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeOnly {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Hero Subtitle: fade + slide up ─────────────── */
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 10px 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideFadeIn 0.9s ease forwards;
+  animation-delay: 0.9s;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Hero Bio Typed Text ────────────────────────── */
+.hero-bio-text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 4px 0 14px 0;
+  line-height: 1.7;
+  min-height: 28px;
+  max-width: 560px;
+}
+
+/* ─── Blinking Cursor ────────────────────────────── */
+.cursor {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 200;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── Social Buttons: fade in last ──────────────── */
+.social-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.fade-in-late {
+  opacity: 0;
+  animation: fadeOnly 0.8s ease forwards;
+  animation-delay: 2s;
+}
+
+/* ─── View All Projects Button ───────────────────── */
+.hero-btn {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #7c6fa0;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #5e5180;
+}
+
+/* ─── Tooltip ────────────────────────────────────── */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.78rem;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ─── Mobile ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
+    min-width: unset;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px;
+  }
+}
