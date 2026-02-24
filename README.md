@@ -46,7 +46,7 @@ This template is tested and worked on:
 - iOS 15.5
   - Chrome 103
   - Safari 15.5
-  - Firefox 102
+  - Firefox 102 
 
 # Problems and Bugs
 Here are the problems and bugs that I plan to address in the future. If you fixed them, please do not hesitate to send me a pull request, and I would be very grateful. Please also report problems and bugs in [GitHub Issues](https://github.com/yenchiah/project-website-template/issues).
